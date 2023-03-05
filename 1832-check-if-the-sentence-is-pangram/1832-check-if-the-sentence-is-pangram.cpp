@@ -5,13 +5,10 @@ public:
       for(auto c : sentence ){
         if(isalpha(c))
         {
-          c = tolower(c);
-          alphabet_set.insert(c);
+          alphabet_set.insert(tolower(c));
         }
       }
 
-      
-      // TODO: Write your code here
-      return (alphabet_set.size() == 26) ? true : false;
+      return alphabet_set.size() == 26;
     }
 };
