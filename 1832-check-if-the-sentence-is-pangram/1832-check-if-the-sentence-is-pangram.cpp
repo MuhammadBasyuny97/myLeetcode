@@ -7,11 +7,9 @@ public:
         {
           alphabet_set.insert(tolower(c));
         }
-          //avoid looping through the entire sentence if the sentence became pangram 
-          if(alphabet_set.size() == 26)
-              return true;
+         
       }
 
-      return false ;
+      return alphabet_set.size() == 26 ;
     }
 };
