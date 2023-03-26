@@ -8,11 +8,10 @@ public:
       } 
         i = s.length() - 1;
         int length {0};
-        while(i>=0 && s[i] != ' ' && !s.empty()){
+        while(i >= 0 && s[i] != ' ' ){
             length++;
             s.pop_back();
-            --i;  
-            
+            --i;           
         }
         return length;
     }
