@@ -6,13 +6,7 @@ public:
         for(auto str: strs){
             string str_copy = str;
             sort(str_copy.begin(), str_copy.end());
-            
-            if(m.find(str_copy) != m.end()){
-                m[str_copy].push_back(str);
-             }
-            else{
-                m[str_copy] = {str};
-            }
+            m[str_copy].push_back(str);
          }
         
         for(auto key : m){
