@@ -2,16 +2,15 @@ class Solution {
 public:
     bool isAnagram(string s, string t) {
        if(s.size() != t.size()) return false;
-       if(s == t) return true;
         
-        unordered_map<char , int> umap ;
-      
-        for(int i{0}; i < s.size(); ++i){
-            umap[s[i]]++;
-            umap[t[i]]--;
+        int arr[26] = {0};
+        
+        for(size_t i {0}; i < s.size() ; ++i){
+            arr[s[i] - 'a']++;
+            arr[t[i] - 'a']--;
         }
-        for(auto c: umap){
-            if(c.second) return false;
+        for(int i {0}; i < 26; ++i){
+            if(arr[i]) return false;
         }
         return true;
     }
