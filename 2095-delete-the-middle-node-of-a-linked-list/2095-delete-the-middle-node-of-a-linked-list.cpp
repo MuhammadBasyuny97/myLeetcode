@@ -19,13 +19,13 @@ public:
             current = current -> next;
         }
         int middle = nodes_count / 2;
-        ListNode* temp = head;
+        ListNode* prev_middle = head;
         for(int i{0}; i < middle - 1; ++i){
-            temp = temp -> next;
+            prev_middle = prev_middle -> next;
         }
         if(nodes_count > 1){
-            ListNode* middleNode = temp -> next;
-            temp -> next = middleNode -> next;
+            ListNode* middleNode = prev_middle -> next;
+            prev_middle -> next = middleNode -> next;
             middleNode -> next = nullptr;
         }
        
