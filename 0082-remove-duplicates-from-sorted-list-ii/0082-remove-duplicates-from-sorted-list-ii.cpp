@@ -10,32 +10,29 @@
  */
 class Solution {
 public:
-    ListNode* traverseToNewNode(ListNode* root, int val){
-        while(root && root -> val == val){
-            root = root -> next;
-        }
-        return root;
-    }
+   
     ListNode* deleteDuplicates(ListNode* head) {
-        if(head == nullptr || head -> next == nullptr){
-            return head;
-        }
-       while(head && head -> next != nullptr && head -> val == head -> next -> val){
-           head = traverseToNewNode (head, head -> val);
-       }
-        //ListNode dummy = (-1,head);
+  
+        map<int,int> m;
         ListNode* current = head;
-        ListNode* prev = current;
-        while(current != nullptr && current -> next != nullptr){
-            if(current -> val == current -> next -> val){
-                current = traverseToNewNode(current, current -> val);
-                prev -> next = current;
-            }
-            else{
-                prev = current;
-               current = current -> next; 
-            }
+        while(current != nullptr){
+            int val = current -> val;
+            m[val]++;
+            current = current -> next;
         }
-        return head;
+        vector<int>unDuplicated;
+        for(auto elem: m){
+            if(elem.second == 1) unDuplicated.push_back(elem.first);
+        }
+      
+         ListNode* prev = new ListNode();
+         ListNode* dummy = prev;
+        for(int i{0}; i < unDuplicated.size(); ++i){
+            int val = unDuplicated[i];
+            ListNode* ptr = new ListNode(val);
+            prev -> next = ptr;
+            prev = ptr;        
+        }
+        return dummy -> next;
     }
 };
