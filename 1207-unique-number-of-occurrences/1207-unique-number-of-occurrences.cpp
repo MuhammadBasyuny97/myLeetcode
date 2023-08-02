@@ -5,13 +5,12 @@ public:
         for(const auto &elem: arr){
             m[elem]++;
         }
-        vector<int> vec;
+        unordered_set<int>s;
         for(const auto & elem: m){
-            vec.push_back(elem.second);
-        }
-        sort(vec.begin(), vec.end());
-        for(int i{0}; i < vec.size() - 1; ++i){
-            if(vec[i] == vec[i+1]) return false;
+          if(!s.count(elem.second)) s.insert(elem.second);
+          else{
+              return false;
+          }  
         }
         return true;
     }
