@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool uniqueOccurrences(vector<int>& arr) {
-        map<int,int> m;
+        unordered_map<int,int> m;
         for(const auto &elem: arr){
             m[elem]++;
         }
