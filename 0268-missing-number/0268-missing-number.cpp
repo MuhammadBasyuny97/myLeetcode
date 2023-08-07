@@ -2,15 +2,16 @@ class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         int n = nums.size();
-        unordered_set<int>s;
-        for(int i{0}; i <= n; ++i){
-            s.insert(i);
-        }
+        int sum = 0;
+        int rsum = 0;
+        int x = 1;
         for(int i{0}; i < n; ++i){
-            auto it = s.find(nums[i]);
-            s.erase(it);
+            rsum += nums[i];
+            sum += x;
+            ++x;
         }
-        return *(s.begin());
+       
+        return sum - rsum;
         
     }
 };
