@@ -30,8 +30,10 @@ public:
         }
         return new_str;
         */
+        
         // ======= Solution 2 ===========
-        string str;
+        
+        /* string str;
         int i = s.length() - 1;
         int skip_count{0};
             
@@ -50,6 +52,14 @@ public:
             --i;
         }
         reverse(str.begin(),str.end());
-        return str;
+        return str; */
+        
+       //======== Solution 3 ===========
+        string answer;
+        for(int i{0}; i < s.length(); ++i){
+            if(s[i] == '*') answer.pop_back();
+            else answer.push_back(s[i]);
+        }
+        return answer;
     }
 };
