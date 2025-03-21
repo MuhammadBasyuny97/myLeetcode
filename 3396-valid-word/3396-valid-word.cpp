@@ -8,7 +8,7 @@ public:
         if (word.length() < 3)
             return false;
 
-        for(auto c: word){
+        for(auto &c: word){
             c = toupper(c);
             if(isalnum(c)) {
                 if( c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
