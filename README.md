@@ -11,6 +11,7 @@
 |  |
 | ------- |
 | [2128-reverse-prefix-of-word](https://github.com/MuhammadBasyuny97/myLeetcode/tree/master/2128-reverse-prefix-of-word) |
+| [3396-valid-word](https://github.com/MuhammadBasyuny97/myLeetcode/tree/master/3396-valid-word) |
 ## Stack
 |  |
 | ------- |
